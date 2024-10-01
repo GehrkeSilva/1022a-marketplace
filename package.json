@@ -7,7 +7,7 @@
     "dev": "tsx watch src/main.ts",
     "test": "vitest -w",
     "build":"npm install && tsc",
-    "start":"node./dist/main.js"
+    "start":"node ./dist/main.js"
   },
   "author": "GehrkeSilva",
   "license": "ISC",
