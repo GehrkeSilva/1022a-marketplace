@@ -51,12 +51,12 @@ app.get("/produtos", async (req: express.Request, res: express.Response) => {
 // Rota para adicionar produtos
 app.post("/produtos", async (req: express.Request, res: express.Response) => {
   try {
-    const { nome, descricao, preco, imagem } = req.body;
+    const { marca, nome, descricao, preco, imagem, quantidade } = req.body;
     const [result]: any = await pool.query(
-      "INSERT INTO produtos (nome, descricao, preco, imagem) VALUES (?, ?, ?, ?)",
-      [nome, descricao, preco, imagem]
+      "INSERT INTO produtos (marca, nome, descricao, preco, imagem, quantidade) VALUES (?, ?, ?, ?, ?, ?)",
+      [marca, nome, descricao, preco, imagem, quantidade]
     );
-    res.send({ id: result.insertId, nome, descricao, preco, imagem });
+    res.send({ id: result.insertId, marca, nome, descricao, preco, imagem, quantidade });
   } catch (e: any) {
     console.error("Erro ao adicionar produto:", e.message);
     res.status(500).json({ error: "Erro ao adicionar produto", details: e.message });
