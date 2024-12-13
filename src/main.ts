@@ -2,6 +2,8 @@ import express from 'express';
 import mysql from 'mysql2/promise';
 import cors from 'cors';
 
+
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -70,7 +72,7 @@ app.post("/carrinho", async (req, res) => {
       await connection.end();
   
       // Retorna o ID do item inserido
-      res.send({ id: result.insertId, nome, preco, imagem });
+      res.send({nome, preco, imagem });
     } catch (e) {
       console.log(e);
       res.status(500).send(e);
