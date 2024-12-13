@@ -11,11 +11,11 @@ app.use(cors());
 // Configuração da conexão com o banco
 const createConnection = async () => {
   return mysql.createConnection({
-    host: process.env.dbhost || "localhost",
-    user: process.env.dbuser || "root",
-    password: process.env.dbpassword || "",
-    database: process.env.dbname || "banco1022a",
-    port: process.env.dbport ? parseInt(process.env.dbport) : 3306,
+    host: process.env.dbhost || "mysq-marketplace-projeto-69.c.aivencloud.com",
+    user: process.env.dbuser || "avnadmin",
+    password: process.env.dbpassword || "AVNS_gyfqNavqN5EDMFzAwmj",
+    database: process.env.dbname || "defaultdb",
+    port: process.env.dbport ? parseInt(process.env.dbport) : 27925,
   });
 };
 
